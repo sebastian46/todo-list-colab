@@ -20,9 +20,9 @@ class Tag
     private \DateTimeInterface $createdAt;
 
     #[ORM\ManyToOne(targetEntity: User::class)]
-    private ?User $createdBy = null;
+    private ?User $user = null;
 
-    #[ORM\Column(type: 'string', length: 7, nullable: true)]
+    #[ORM\Column(type: 'string', length: 16, nullable: true)]
     private ?string $color = null;
 
     public function __construct()
@@ -51,14 +51,14 @@ class Tag
         return $this->createdAt;
     }
 
-    public function getCreatedBy(): ?User
+    public function getUser(): ?User
     {
-        return $this->createdBy;
+        return $this->user;
     }
 
-    public function setCreatedBy(?User $createdBy): self
+    public function setUser(?User $user): self
     {
-        $this->createdBy = $createdBy;
+        $this->user = $user;
         return $this;
     }
 }

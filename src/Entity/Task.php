@@ -49,7 +49,10 @@ class Task
         $this->dateCreated = new \DateTime();
     }
 
-    // ... existing methods ...
+    public function getId(): ?int
+    {
+        return $this->name;
+    }
 
     public function getName(): ?string
     {
